@@ -88,7 +88,12 @@ function draw(){
         coin();
       }
     }
+    
+    score = score + Math.round(getFrameRate()/60);
 }
+  drawSprites();
+  text("Time Alive: " + score,50,50);
+
   if ( eightBit.isTouching(flameGroup)|eightBit.isTouching(asteroidGroup)){
     gamestate = end;
     console.log("gameover");
@@ -99,13 +104,13 @@ function draw(){
     // coin1.velocityX = 0;
     gameover = createSprite(600,300,100,100);
     gameover.addImage("gameover", gameoverImage);
+    score=score+0;
  
   }
 
  
-  drawSprites();
-  text("Time Alive: " + score,50,50);
   
+
 }
 
 
